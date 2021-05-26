@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A Simple Clock</title>
+	<link rel="stylesheet" type="text/css" href="prcatiseClock.css">
+</head>
+<body>
+	<div class="wrapper">
+		<div class="display">
+			<div id="time">
+		</div>
+		</div>
+		<span></span>
+		<span></span>
+	</div>
+<script type="text/javascript">
+	setInterval(dynamic,1000); //bydefault it will be 1sec if you not specify.
+	
+	function dynamic()
+{
+	let d = new Date();
+	let hours = d.getHours();
+	let minutes = d.getMinutes();
+	let seconds = d.getSeconds();
+	let day_night = "AM";
+	if(hours > 12){
+		day_night = "PM";
+		hours = hours - 12;
+	}
+	if(hours < 10){
+		hours = "0"+hours;
+	}
+	if(minutes < 10){
+		minutes = "0"+minutes;
+	}
+	if(seconds < 10){
+		seconds = "0"+seconds;
+	}
+	document.querySelector(".display #time").innerHTML = hours +":" +minutes+":"+seconds +" "+ day_night ;
+}
+</script>
+</body>
+</html>

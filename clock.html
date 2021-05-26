@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Digital Clock </title>
+</head>
+<body>
+
+<button onclick="clearInterval(bold)"> Click Me To Stop Clock </button>
+<strong><p id="time"></p></strong>
+
+<script type="text/javascript">
+	
+	var bold = setInterval(dynamic);
+	
+	function dynamic(){
+	let d = new Date();
+	let fetch  = d.toLocaleTimeString();
+	// document.write(fetch);
+	document.getElementById("time").innerHTML = fetch; 
+}
+</script>
+
+</body>
+</html>
